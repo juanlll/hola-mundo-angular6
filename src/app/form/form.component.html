@@ -1,0 +1,30 @@
+
+       
+    
+      <div class="row">
+
+      	<ul class="collection with-header">
+      		
+        <li class="collection-header orange white-text"><h4>Registros Ambientales</h4></li>
+        <li class="collection-item">
+          <input type="text" name="" ng-value="record.temp" placeholder="Temperatura °">
+          <input type="text" name="" ng-value="record.humidity" placeholder="Humedad %">
+          <input type="text" name="" ng-value="record.co2"   placeholder="Co2 ppm">
+          <br>
+          <br>
+        	<button class="btn orange" (click)="setRecord(record)" minlength="4" maxlength="4">Añadir Registro</button>
+          <br>
+          <br>
+        </li>
+        <li class="collection-item" *ngFor="let record of records">
+        	<strong>Temperatura:</strong> {{record.temp}}°<br> 
+        	<strong>Humedad:</strong> {{record.humidity}}%<br>
+        	<strong>Co2:</strong> {{record.co2}}ppm
+        </li>
+      <li class="collection-item red-text" *ngIf="record.temp === null || record.temp == 0">Campo de temperatura vacio!</li>
+      <li class="collection-item red-text" *ngIf="record.humidity === null || record.humidity == 0">Campo de humedad vacio!</li>
+      <li class="collection-item red-text" *ngIf="record.co2 === null || record.co2 == 0">Campo de co2 vacio!</li>
+
+
+      </ul>
+      </div>
